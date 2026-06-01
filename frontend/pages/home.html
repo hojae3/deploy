@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="utf-8" />
@@ -512,7 +512,7 @@
   signupBtn.onclick = function(e) {
     e.preventDefault();
     localStorage.clear(); sessionStorage.clear();
-    fetch('/api/webcam/stop', { method: 'POST' }).finally(() => location.reload());
+    fetch('http://localhost:8765/api/webcam/stop', { method: 'POST' }).finally(() => location.reload());
   };
   document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('a[href="/signup.html"]').forEach(function(btn) {

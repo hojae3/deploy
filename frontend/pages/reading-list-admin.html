@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -32,7 +32,7 @@
           <a href="/growth.html" class="nav-link">성장일지</a>
           <a href="/guide.html" class="nav-link">가이드</a>
           <a href="/book-write-admin.html" class="nav-link">글 추가</a>
-          <a href="/" class="nav-link" onclick="localStorage.clear();fetch('/api/webcam/stop',{method:'POST'})">로그아웃</a>
+          <a href="/" class="nav-link" onclick="localStorage.clear();fetch('http://localhost:8765/api/webcam/stop',{method:'POST'})">로그아웃</a>
         </div>
       </div>
     </nav>
