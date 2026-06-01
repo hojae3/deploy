@@ -402,7 +402,7 @@
     pill.style.color      = 'var(--muted)';
 
     try {
-      const res = await fetch('/api/webcam/start', {
+      const res = await fetch('http://localhost:8765/api/webcam/start', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ camera_index: index }),
@@ -432,7 +432,7 @@
         pill.style.color      = '#e74c3c';
         document.getElementById('next-btn').disabled = false;
       };
-      img.src = '/api/webcam/preview?' + Date.now();
+      img.src = 'http://localhost:8765/api/webcam/preview?' + Date.now();
     } catch {
       loading.style.display = 'none';
       idle.style.display    = 'flex';
@@ -453,7 +453,7 @@
     document.getElementById('selected-meta').style.display = 'none';
     document.getElementById('no-select-meta').style.display = '';
     try {
-      const data = await fetch('/api/webcam/scan').then(r => r.json());
+      const data = await fetch('http://localhost:8765/api/webcam/scan').then(r => r.json());
       renderCameras(data.cameras ?? data ?? []);
     } catch {
       document.getElementById('cam-list').innerHTML = `
